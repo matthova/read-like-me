@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>Read Like Me</title>
 
     <!-- Bootstrap -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
@@ -16,9 +16,9 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body style="width:100VW; height:100VH; background-color:#f5f5f5">
+  <body style="width:100%; height:100%; background-color:#f5f5f5">
     <h1>Normally, both your asses would be dead as fucking fried chicken, but you happen to pull this shit while I'm in a transitional period so I don't wanna kill you, I wanna help you. But I can't give you this case, it don't belong to me. Besides, I've already been through too much shit this morning over this case to hand it over to your dumb ass.
-</h1>
+    </h1>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -80,22 +80,32 @@
             "Y" : "#FAD567",
             "Z" : "#000000"
         };
-        var indexes = [];
+        
         $("h1").each(function(index, element) {
-            var newString = '';
-            var charArray = $(this).text().split('');
-            charArray.forEach(function(char){
-                if(colors[char]){
-                    newString += "<span " +
-                                    'style=\'color:' + colors[char] + ";" + 
-                                    "-webkit-text-stroke: 2px rgba(.5,.5,.5,.5);'" +
-                                 ">" + char + "</span>";
-                } else {
-                    newString += "<font color='#000'>" + char + "</font>";
-                }
-            });
-            $(this).html(newString);
+            $(this).html(injectColor($(this).text()));
         });
+        
+        /**
+         * Takes a string of text and returns the string with each character
+         * wrapped in a span tag
+         *
+         * @param {String} text 
+         * @return {String} newString
+         */
+        function injectColor(text) {
+            var newString = '';
+            var charArray = text.split('');
+            // Wrap each character in a span with its corresponding color
+            // If there is no corresponding color, make it black
+            charArray.forEach(function(char){
+                newString += "<span style='" +
+                                "color:" + (colors[char] ? colors[char] : "#000") + ";" + 
+                                "-webkit-text-stroke: 1px rgba(127,127,127,.2);" +
+                             "'>" + char + "</span>";
+            });
+            return newString;
+        }
+        
     </script>
   </body>
 </html>
