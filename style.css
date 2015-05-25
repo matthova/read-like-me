@@ -1,7 +1,7 @@
 #readlikeme{
   width: 200px;
 }
-#checkPage{
+#checkpage{
   width: 100px;
   text-align: center;
   background-color: #2A9471;
@@ -13,6 +13,10 @@
   transition: .4s;
 }
 
-#checkPage:hover{
+#checkpage:hover{
   opacity: .6;
+}
+
+#stop-button{
+  background-color: #df3f3f;
 }
