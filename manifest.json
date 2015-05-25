@@ -4,7 +4,8 @@
     "description": "Share your alphabet of grapheme synesthesia with this chrome extension.",
     "content_scripts": [{
         "matches": ["<all_urls>"],
-        "js": ["content.js", "jquery.min.js"]
+        "css": ["style.css"],
+        "js": ["content.js", "jquery.min.js", "button.js"]
     }],
     "browser_action": {
         "scripts": ["popup.js"],
