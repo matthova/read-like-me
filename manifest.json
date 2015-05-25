@@ -1,14 +1,14 @@
 {
-    "name": "Basic Button Chrome Extension",
+    "name": "Read Like Me",
     "version": "1.0",
-    "description": "Chrome Extension Example for manipulating DOM with an extension button.",
+    "description": "Share your alphabet of grapheme synesthesia with this chrome extension.",
     "content_scripts": [{
         "matches": ["<all_urls>"],
-        "js": ["content.js"]
+        "js": ["content.js", "jquery.min.js"]
     }],
     "browser_action": {
         "scripts": ["popup.js"],
-        "default_title": "Title Change on Click",
+        "default_title": "Read Like Me",
         "default_icon": "icon.png",
         "default_popup": "popup.html"
     },

@@ -4,8 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
         checkPageButton.addEventListener('click', function() {
             chrome.tabs.sendMessage(tab.id,
             {
-                command: "change_title",
-                title: "New Title!"
+                command: "updateText"
             },
             function(msg) {
                 console.log("result message:", msg);
