@@ -10,7 +10,7 @@
            "48": "icon48.png",
           "128": "icon128.png" },
     "browser_action": {
-        "scripts": ["popup.js"],
+        "scripts": ["popup.js", "jquery.min.js"],
         "css": ["style.css"],
         "default_title": "Read Like Me",
         "default_icon": "icon.png",
