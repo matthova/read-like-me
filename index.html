@@ -25,86 +25,86 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script>
-        var colors = {
-            "a" : "#df753f",
-            "b" : "#792e94",
-            "c" : "#d13b56",
-            "d" : "#315f92",
-            "e" : "#FAE167",
-            "f" : "#2DA05C",
-            "g" : "#06693F",
-            "h" : "#2D9F5F",
-            "i" : "#FFFF93",
-            "j" : "#764EA9",
-            "k" : "#D43C51",
-            "l" : "#4D399A",
-            "m" : "#DF603F",
-            "n" : "#DF803F",
-            "o" : "#FFBF93",
-            "p" : "#45A686",
-            "q" : "#573698",
-            "r" : "#C11D1D",
-            "s" : "#DF3F3F",
-            "t" : "#824BA7",
-            "u" : "#BDB6A0",
-            "v" : "#647774",
-            "w" : "#420C67",
-            "x" : "#000000",
-            "y" : "#FAD567",
-            "z" : "#000000",
-            
-            "A" : "#df753f",
-            "B" : "#792e94",
-            "C" : "#d13b56",
-            "D" : "#315f92",
-            "E" : "#FAE167",
-            "F" : "#2DA05C",
-            "G" : "#06693F",
-            "H" : "#2D9F5F",
-            "I" : "#FFFF93",
-            "J" : "#764EA9",
-            "K" : "#D43C51",
-            "L" : "#4D399A",
-            "M" : "#DF603F",
-            "N" : "#DF803F",
-            "O" : "#FFBF93",
-            "P" : "#45A686",
-            "Q" : "#573698",
-            "R" : "#C11D1D",
-            "S" : "#DF3F3F",
-            "T" : "#824BA7",
-            "U" : "#BDB6A0",
-            "V" : "#647774",
-            "W" : "#420C67",
-            "X" : "#000000",
-            "Y" : "#FAD567",
-            "Z" : "#000000"
-        };
+    var colors = {
+        "a" : "#df753f",
+        "b" : "#792e94",
+        "c" : "#d13b56",
+        "d" : "#315f92",
+        "e" : "#fae167",
+        "f" : "#2da05c",
+        "g" : "#06693f",
+        "h" : "#2d9f5f",
+        "i" : "#ffff93",
+        "j" : "#764ea9",
+        "k" : "#d43c51",
+        "l" : "#4d399a",
+        "m" : "#df603f",
+        "n" : "#df803f",
+        "o" : "#ffbf93",
+        "p" : "#45a686",
+        "q" : "#573698",
+        "r" : "#c11d1d",
+        "s" : "#df3f3f",
+        "t" : "#824ba7",
+        "u" : "#bdb6a0",
+        "v" : "#647774",
+        "w" : "#420c67",
+        "x" : "#000000",
+        "y" : "#fad567",
+        "z" : "#000000",
         
-        $("h1").each(function(index, element) {
-            $(this).html(injectColor($(this).text()));
+        "A" : "#df753f",
+        "B" : "#792e94",
+        "C" : "#d13b56",
+        "D" : "#315f92",
+        "E" : "#fae167",
+        "F" : "#2da05c",
+        "G" : "#06693f",
+        "H" : "#2d9f5f",
+        "I" : "#ffff93",
+        "J" : "#764ea9",
+        "K" : "#d43c51",
+        "L" : "#4d399a",
+        "M" : "#df603f",
+        "N" : "#df803f",
+        "O" : "#ffbf93",
+        "P" : "#45a686",
+        "Q" : "#573698",
+        "R" : "#c11d1d",
+        "S" : "#df3f3f",
+        "T" : "#824ba7",
+        "U" : "#bdb6a0",
+        "V" : "#647774",
+        "W" : "#420c67",
+        "X" : "#000000",
+        "Y" : "#fad567",
+        "Z" : "#000000"
+    };
+    
+    $("h1").each(function(index, element) {
+        $(this).html(injectColor($(this).text()));
+    });
+    
+    /**
+     * Takes a string of text and returns the string with each character
+     * wrapped in a span tag
+     *
+     * @param {String} text 
+     * @return {String} newString
+     */
+    function injectColor(text) {
+        var newString = '';
+        var charArray = text.split('');
+        // Wrap each character in a span with its corresponding color
+        // If there is no corresponding color, make it black
+        charArray.forEach(function(char){
+            newString += "<span style='" +
+                "color:" + (colors[char] ? colors[char] : "#000") + ";" +
+                "-webkit-text-stroke: 1px rgba(127,127,127,.2);" +
+            "'>" + char + "</span>";
         });
-        
-        /**
-         * Takes a string of text and returns the string with each character
-         * wrapped in a span tag
-         *
-         * @param {String} text 
-         * @return {String} newString
-         */
-        function injectColor(text) {
-            var newString = '';
-            var charArray = text.split('');
-            // Wrap each character in a span with its corresponding color
-            // If there is no corresponding color, make it black
-            charArray.forEach(function(char){
-                newString += "<span style='" +
-                                "color:" + (colors[char] ? colors[char] : "#000") + ";" + 
-                                "-webkit-text-stroke: 1px rgba(127,127,127,.2);" +
-                             "'>" + char + "</span>";
-            });
-            return newString;
-        }
+        return newString;
+    }
         
     </script>
   </body>
