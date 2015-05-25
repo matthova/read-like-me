@@ -1,7 +1,7 @@
 {
     "name": "Read Like Me",
     "version": "1.0",
-    "description": "Share your alphabet of grapheme synesthesia with this chrome extension.",
+    "description": "Share your alphabet of grapheme synesthesia with this chrome extension. Powered by: The Synesthesia Network",
     "content_scripts": [{
         "matches": ["<all_urls>"],
         "css": ["style.css"],
