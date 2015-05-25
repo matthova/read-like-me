@@ -1,5 +1,5 @@
 Project your grapheme synesthesia onto any website with this chrome extension.
-Built on top of my chrome extension template https://github.com/matthova/basic_chrome_extension
+This project was built on top of my [chrome extension template](https://github.com/matthova/basic_chrome_extension)
 
 To test the plugin:
 
