@@ -7,6 +7,9 @@
         "css": ["style.css"],
         "js": ["content.js", "jquery.min.js", "button.js"]
     }],
+    "icons": { "16": "icon16.png",
+           "48": "icon48.png",
+          "128": "icon128.png" },
     "browser_action": {
         "scripts": ["popup.js"],
         "default_title": "Read Like Me",
