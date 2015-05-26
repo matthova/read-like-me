@@ -1,7 +1,7 @@
 /* Listen for messages */
 chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
   if (msg.command && (msg.command === "updateText")) {
-    updateText();
+    updateText(sendResponse);
   }
 });
 
@@ -13,17 +13,19 @@ chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
 */
 var showingColors = false;
 var supportedElements = ["h1", "h2", "h3", "h4", "h5", "h6", "p", "span"];
-function updateText() {
+function updateText(callback) {
   if (showingColors) {
     $("span").each(function(index, element) {
       $(this).attr('style', '');
     });
+    callback("Colors are off!");
   } else {
     supportedElements.forEach(function(element) {
       $(element).each(function(index, element) {
         $(this).html(injectColor($(this).text()));
       });
     })
+    callback("Colors are on!");
   }
   showingColors = showingColors ? false : true; // toggle showingColors on each click
 }
