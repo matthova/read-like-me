@@ -17,6 +17,10 @@
   opacity: .6;
 }
 
-#stop-button{
-  background-color: #df3f3f;
+.stop-button{
+  background-color: #df3f3f !important;
+}
+
+.transition{
+  pointer-events: none
 }
