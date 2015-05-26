@@ -1,14 +1,17 @@
 {
     "name": "Read Like Me",
     "version": "1.0",
-    "description": "Share your alphabet of grapheme synesthesia with this chrome extension.",
+    "description": "Share your alphabet of grapheme synesthesia with this chrome extension. Powered by: The Synesthesia Network",
     "content_scripts": [{
         "matches": ["<all_urls>"],
-        "css": ["style.css"],
-        "js": ["content.js", "jquery.min.js", "button.js"]
+        "js": ["content.js", "jquery.min.js"]
     }],
+    "icons": { "16": "icon16.png",
+           "48": "icon48.png",
+          "128": "icon128.png" },
     "browser_action": {
-        "scripts": ["popup.js"],
+        "scripts": ["popup.js", "jquery.min.js", "button.js"],
+        "css": ["style.css"],
         "default_title": "Read Like Me",
         "default_icon": "icon.png",
         "default_popup": "popup.html"
